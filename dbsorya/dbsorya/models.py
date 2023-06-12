@@ -7,6 +7,9 @@ class Category(models.Model):
     ]
     name = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
 
+    class Meta:
+        app_label = 'dbsorya'
+
 class Supplier(models.Model):
     name = models.CharField(max_length=100)
     address = models.TextField()
