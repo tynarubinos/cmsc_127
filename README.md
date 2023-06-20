@@ -6,10 +6,10 @@ This is a Python application called DBSoria. It allows you to manage inventory i
 
 Make sure you have the following requirements installed on your system:
 
-- Python
-- Pip
-- Flask (Install with `pip install Flask`)
-- MySQL
+- [Python](https://www.python.org/downloads/)
+- [Pip](https://pip.pypa.io/en/stable/installing/)
+- [Flask](https://flask.palletsprojects.com/en/2.1.x/installation/) (Install with `pip install Flask`)
+- [MySQL](https://dev.mysql.com/downloads/)
 
 ### Installation
 
@@ -50,3 +50,5 @@ This will install Flask and the MySQL Connector Python library, which are requir
 Feel free to explore and customize the application according to your needs.
 
 **Note:** Remember to configure the database connection settings in the `app.py` file to match your MySQL database credentials.
+
+Enjoy using DBSoria!
