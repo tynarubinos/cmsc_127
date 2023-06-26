@@ -10,6 +10,8 @@
 # Generation Time: 2023-06-20 10:04:46 +0000
 # ************************************************************
 
+CREATE DATABASE dbsorya_db;
+USE dbsorya_db;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;

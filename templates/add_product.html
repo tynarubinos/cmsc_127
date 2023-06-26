@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form action="/add_product" method="POST">
+        <label for="product_code">Product Code:</label>
+        <input type="text" id="product_code" name="product_code" required><br><br>
+
+        <label for="category_id">Category ID:</label>
+        <input type="number" id="category_id" name="category_id" required><br><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="date_acquired">Date Acquired:</label>
+        <input type="date" id="date_acquired" name="date_acquired" required><br><br>
+
+        <label for="expiration_date">Expiration Date:</label>
+        <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+
+        <label for="cost">Cost:</label>
+        <input type="number" id="cost" name="cost" required><br><br>
+
+        <label for="storage_location">Storage Location:</label>
+        <input type="text" id="storage_location" name="storage_location" required><br><br>
+
+        <label for="supplier_id">Supplier ID:</label>
+        <input type="number" id="supplier_id" name="supplier_id" required><br><br>
+
+        <input type="submit" value="Add Item">
+    </form>
+</body>
+</html>
