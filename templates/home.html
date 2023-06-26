@@ -1,32 +1,23 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>DBSoria</h1>
+{% endblock %} 
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
-    <title>DBSoria</title>
+
 </head>
 <body>
-    <h1>Inventory Management</h1>
-    <a href="/add">Add Item</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        {% for item in inventory %}
-        <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.price }}</td>
-            <td>
-                <a href="/edit/{{ item.id }}">Edit</a>
-                <a href="/delete/{{ item.id }}">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
+<h1>DBSoria</h1>
+<h2>Keep track of your items!</h2>
 
+<a href="/inventory">Inventory</a>
+<a href="/">Suppliers</a>
+
+
+
+</body>
+</html> -->
