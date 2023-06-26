@@ -1,9 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>DBSoria</title>
 </head>
 <body>
+{% block content %}
     <h1>Products List</h1>
     <a href="/">Home</a>
     <a href="/add_product">Add Product</a>
@@ -38,6 +41,7 @@
         </tr>
         {% endfor %}
     </table>
+{% endblock %}
 </body>
 </html>
 
