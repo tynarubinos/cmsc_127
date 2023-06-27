@@ -356,20 +356,20 @@ a{
 }
  .w3-sidebar{
     height:100%;
-    width:100px;
+    width:200px;
     background-color:#fff;
     position:fixed!important;
     z-index:1;
     overflow:auto
 }
  .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{
-    width:100px
+    width:100%
 }
  .w3-bar-block .w3-dropdown-hover .w3-dropdown-content,.w3-bar-block .w3-dropdown-click .w3-dropdown-content{
-    min-width:10px
+    min-width:100%
 }
  .w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{
-    width:10px;
+    width:100%;
     text-align:left;
     padding:8px 16px
 }
@@ -642,9 +642,9 @@ a{
         padding-top:50px
     }
 }
- @media (min-width:5px){
+ @media (min-width:993px){
     .w3-modal-content{
-        width:10px
+        width:900px
     }
     .w3-hide-large{
         display:none!important
@@ -658,7 +658,7 @@ a{
         display:none!important
     }
 }
- @media (max-width:10px){
+ @media (max-width:992px){
     .w3-sidebar.w3-collapse{
         display:none
     }
@@ -961,7 +961,7 @@ a{
     font-size:15px!important
 }
 .w3-large{
-    font-size:20px!important
+    font-size:18px!important
 }
  .w3-xlarge{
     font-size:24px!important
@@ -1084,8 +1084,11 @@ a{
     float:right!important
 }
  .w3-button:hover{
-    color:#000!important;
-    background-color:#ccc!important
+    color:#c02420!important;
+    background-color:#ffeeee!important;
+    text-decoration: none!important;
+    font-weight: bold;
+    font-size: 25px;
 }
  .w3-transparent,.w3-hover-none:hover{
     background-color:transparent!important

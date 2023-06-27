@@ -26,34 +26,41 @@
 .w3-button {
   background-color: transparent;
   border: none;
-  color: #000;
+  text-align: center;
 }
+
+  .w3-bar-item {
+    margin-bottom: 10px;
+  }
 </style>
     <title>{% block title %}DBSoria{% endblock %}</title>
 </head>
 <body>
 
-  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: block; width: 15%; margin: 0px auto;" id="mySidebar"">
-    <button class="w3-button w3-large" src="static/x.svg"
-    onclick="w3_close()">&times;</button>
-    
-    <div class="logo">
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: block; width: 250px; margin: 0px auto;" id="mySidebar"">
+    <div style="position: relative;">
+      <button class="w3-button w3-large" onclick="w3_close()" style="position: absolute; top: 0; right: 0;"><img class="home" src="static/x.svg" alt="close"/></button>
+    </div>
+    <div class="logo" >
       <img class="store-icon" src="static/logo.svg" alt="Store icon" />
     </div>
-    <a href="#" class="w3-bar-item w3-button">
-      <img class="home" src="static/home.svg" alt="activity" />Home</a>
-    <a href="#" class="w3-bar-item w3-button">
-      <img class="search" src="static/search.svg" alt="activity" />Search</a>
-      <a href="#" class="w3-bar-item w3-button"> 
-      <img class="activity" src="static/shopping-cart.svg" alt="activity" /> Inventory </a>
-    <a href="#" class="w3-bar-item w3-button"> 
-    <img class="activity" src="static/activity.svg" alt="activity" /> Setting </a>
     
+    <a href="/" class="w3-bar-item w3-button" style="font-size: 18px;">
+      <img class="home" src="static/home.svg" alt="activity" style="margin-right: 10px; margin-left: 15px; color:#5e1419"/>Home</a>
+    <a href="/product" class="w3-bar-item w3-button" style="font-size: 18px;">
+      <img class="product" src="static/shopping-cart.svg" alt="activity" style="margin-right: 10px; margin-left: 15px; color:#5e1419"/>Product</a>
+      <a href="/category" class="w3-bar-item w3-button" style="font-size: 18px;"> 
+      <img class="category" src="static/server.svg" alt="category" style="margin-right: 10px; margin-left: 15px; color:#5e1419"/> Category </a>
+    <a href="/supplier" class="w3-bar-item w3-button" style="font-size: 18px;"> 
+    <img class="supplier" src="static/users.svg" alt="supplier" style="margin-right: 10px; margin-left: 15px; color:#5e1419"/> Supplier </a>
+    
+    <p style="margin-right: 10px; margin-left: 15px;position: absolute; bottom: 20px; left: 10px; font-size: 18px; color: #888;">&copy; 2023 <span class="dbsoryatext"> DBSORIA</span>. <br> All rights reserved.</p>
+
   </div>
       <div id="main">
       
       <div class="shadow-sm mb-5 navbar navbar-light" style="background-color: #C02420;">
-        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <button id="openNav" class="w3-button w3-xlarge" style="color: #FFFF;"onclick="w3_open()">&#9776;</button>
         <div class="w3-container">
           
         </div>
@@ -96,8 +103,8 @@
 
     <script>
         function w3_open() {
-          document.getElementById("main").style.marginLeft = "25%";
-          document.getElementById("mySidebar").style.width = "10%";
+          document.getElementById("main").style.marginLeft = "0";
+          document.getElementById("mySidebar").style.width = "250px";
           document.getElementById("mySidebar").style.display = "block";
           document.getElementById("openNav").style.display = 'none';
         }
