@@ -52,3 +52,5 @@ Feel free to explore and customize the application according to your needs.
 **Note:** Remember to configure the database connection settings in the `app.py` file to match your MySQL database credentials.
 
 Enjoy using DBSoria!
+
+jean
