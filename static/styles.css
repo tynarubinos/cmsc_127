@@ -1,0 +1,42 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Work Sans", sans-serif;
+}
+
+/* Colors */
+body {
+  color: #5E1914;
+  background-color: #FFFFFF;
+}
+
+h1 {
+  color: #C02420;
+}
+
+h2, h3, h4, h5, h6 {
+  color: #5E1914;
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .left,
+  .right {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left .header,
+  .right .text {
+    text-align: center;
+  }
+  
+  /* Add any other CSS styles you need for the columns and their contents */
+  
