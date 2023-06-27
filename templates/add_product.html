@@ -1,39 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Add Product{% endblock %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Add Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Add Product</h1>
-    <form action="/add_product" method="POST">
-        <label for="product_code">Product Code:</label>
-        <input type="text" id="product_code" name="product_code" required><br><br>
+    <div class="container">
+       <h1 style="color: #c02420; font-size: 40pt;"><b>Add Product</b></h1>
+        <div class="row">
+            <div class="col-md-4">
+                <form action="/add_product" method="POST">
+                    <div class="form-group">
+                        <label for="product_code">Product Code:</label>
+                        <input type="text" class="form-control" id="product_code" name="product_code" required>
+                    </div>
 
-        <label for="category_id">Category ID:</label>
-        <input type="number" id="category_id" name="category_id" required><br><br>
+                    <div class="form-group">
+                        <label for="category_id">Category ID:</label>
+                        <input type="number" class="form-control" id="category_id" name="category_id" required>
+                    </div>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
 
-        <label for="date_acquired">Date Acquired:</label>
-        <input type="date" id="date_acquired" name="date_acquired" required><br><br>
+                    <div class="form-group">
+                        <label for="date_acquired">Date Acquired:</label>
+                        <input type="date" class="form-control" id="date_acquired" name="date_acquired" required>
+                    </div>
+                
+            </div>
 
-        <label for="expiration_date">Expiration Date:</label>
-        <input type="date" id="expiration_date" name="expiration_date" required><br><br>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="expiration_date">Expiration Date:</label>
+                    <input type="date" class="form-control" id="expiration_date" name="expiration_date" required>
+                </div>
 
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required><br><br>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" class="form-control" id="quantity" name="quantity" required>
+                </div>
 
-        <label for="cost">Cost:</label>
-        <input type="number" id="cost" name="cost" required><br><br>
+                <div class="form-group">
+                    <label for="cost">Cost:</label>
+                    <input type="number" class="form-control" id="cost" name="cost" required>
+                </div>
+            </div>
 
-        <label for="storage_location">Storage Location:</label>
-        <input type="text" id="storage_location" name="storage_location" required><br><br>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="storage_location">Storage Location:</label>
+                    <input type="text" class="form-control" id="storage_location" name="storage_location" required>
+                </div>
 
-        <label for="supplier_id">Supplier ID:</label>
-        <input type="number" id="supplier_id" name="supplier_id" required><br><br>
+                <div class="form-group">
+                    <label for="supplier_id">Supplier ID:</label>
+                    <input type="number" class="form-control" id="supplier_id" name="supplier_id" required>
+                </div>
 
-        <input type="submit" value="Add Item">
-    </form>
+                <button type="submit" class="btn btn-primary">Add Item</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+{% endblock %}
