@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+<h1 style="color: #c02420; font-size: 40pt;"><b>Categories</b></h1>
+    <div class="btn-group" role="group" aria-label="Button group">
+        <a href="/add_category" class="btn btn-primary">Add Category</a>
+    </div>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Category ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in category %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Item Actions">
+                        <a href="/edit_category/{{ item.id }}" class="btn btn-warning">Edit</a>
+                        <a href="/delete_category/{{ item.id }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
