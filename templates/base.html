@@ -9,20 +9,56 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     /> -->
+<style>
+.w3-card {
+  width: 10px; /* Adjust the width as desired */
+  text-align: center; /* Center the content horizontally */
+}
 
-    <link rel="stylesheet" type="text/css" href="styles.css">   
-     <style>
-        
-    
-    </style>
+.w3-button {
+  background-color: transparent;
+  border: none;
+  color: #000;
+}
+</style>
     <title>{% block title %}DBSoria{% endblock %}</title>
 </head>
 <body>
+
+  <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display: block; width: 25%; margin: 0px auto;" id="mySidebar"">
+    <button class="w3-button w3-large"
+    onclick="w3_close()">&times;</button>
+      
+    <div class="logo">
+      <img class="store-icon" src="static/logo.svg" alt="Store icon" />
+    </div>
+    <a href="#" class="w3-bar-item w3-button">
+      <img class="home" src="static/home.svg" alt="activity" />Home</a>
+    <a href="#" class="w3-bar-item w3-button">
+      <img class="search" src="static/search.svg" alt="activity" />Search</a>
+      <a href="#" class="w3-bar-item w3-button"> 
+      <img class="activity" src="static/shopping-cart.svg" alt="activity" /> Inventory </a>
+    <a href="#" class="w3-bar-item w3-button"> 
+    <img class="activity" src="static/activity.svg" alt="activity" /> Setting </a>
+    
+  </div>
+      <div id="main">
+      
+      <div class="shadow-sm mb-5 navbar navbar-light" style="background-color: #C02420;">
+        <button id="openNav" class="w3-button w3-xlarge" onclick="w3_open()">&#9776;</button>
+        <div class="w3-container">
+          
+        </div>
+      </div>
+      
     <!-- <nav class = "navbar navbar-expand-lg navbar-dark bg-dark">
         <button class="navbar-toggler" type="button" 
         data-toggle="collapse" data-target="#navbar">
@@ -37,12 +73,9 @@
             </div>
         </div>    
     </nav> -->
+
+    
 <!-- Image and text -->
-    <nav class="shadow-sm mb-5 navbar navbar-light" style="background-color: #C02420;">
-        <a class="navbar-brand" href="#">
-        <img src="static/menu.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        </a>
-    </nav>
     
     <div class = "container">
      {% block content %}
@@ -60,5 +93,20 @@
     src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+    <script>
+        function w3_open() {
+          document.getElementById("main").style.marginLeft = "25%";
+          document.getElementById("mySidebar").style.width = "25%";
+          document.getElementById("mySidebar").style.display = "block";
+          document.getElementById("openNav").style.display = 'none';
+        }
+        function w3_close() {
+          document.getElementById("main").style.marginLeft = "0%";
+          document.getElementById("mySidebar").style.display = "none";
+          document.getElementById("openNav").style.display = "inline-block";
+        }
+        </script>
+
 </body>
 </html>
