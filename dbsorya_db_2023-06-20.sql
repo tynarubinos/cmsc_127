@@ -33,33 +33,6 @@ CREATE TABLE `category` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
-
-# Dump of table inventory
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `inventory`;
-
-CREATE TABLE `inventory` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `quantity` int NOT NULL,
-  `price` decimal(10,2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
-LOCK TABLES `inventory` WRITE;
-/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
-
-INSERT INTO `inventory` (`id`, `name`, `quantity`, `price`)
-VALUES
-	(2,'test2',5,54.00),
-	(4,'test 3',5,10.00);
-
-/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
-UNLOCK TABLES;
-
-
 # Dump of table product
 # ------------------------------------------------------------
 
