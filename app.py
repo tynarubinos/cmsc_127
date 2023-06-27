@@ -93,6 +93,7 @@ def add_product():
 @app.route("/edit_product/<string:product_code>", methods=["GET", "POST"])
 def edit_product(product_code):
     if request.method == "POST":
+        product_code = request.form["product_code"]
         category_id = request.form["category_id"]
         name = request.form["name"]
         date_acquired = request.form["date_acquired"]
@@ -103,8 +104,8 @@ def edit_product(product_code):
         supplier_id = request.form["supplier_id"]
 
         # Update the item in the database
-        cursor.execute("UPDATE product SET category_id=%s, name=%s, date_acquired=%s, expiration_date=%s, quantity=%s, cost=%s, storage_location=%s, supplier_id=%s WHERE product_code=%s", 
-                       (category_id, name, date_acquired, expiration_date, quantity, cost, storage_location, supplier_id, product_code))
+        cursor.execute("UPDATE product SET product_code=%s, category_id=%s, name=%s, date_acquired=%s, expiration_date=%s, quantity=%s, cost=%s, storage_location=%s, supplier_id=%s WHERE product_code=%s", 
+                       (product_code, category_id, name, date_acquired, expiration_date, quantity, cost, storage_location, supplier_id, product_code))
         db.commit()
 
         return redirect("/product")
