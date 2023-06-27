@@ -1,37 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Item</title>
-</head>
-<body>
-    <h1>Edit Item</h1>
-    <form action="/edit_product/{{ item.product_code }}" method="POST">
-        <label for="category_id">Category ID:</label>
-        <input type="number" id="category_id" name="category_id" required><br><br>
-
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="date_acquired">Date Acquired:</label>
-        <input type="date" id="date_acquired" name="date_acquired" required><br><br>
-
-        <label for="expiration_date">Expiration Date:</label>
-        <input type="date" id="expiration_date" name="expiration_date" required><br><br>
-
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required><br><br>
-
-        <label for="cost">Cost:</label>
-        <input type="number" id="cost" name="cost" required><br><br>
-
-        <label for="storage_location">Storage Location:</label>
-        <input type="text" id="storage_location" name="storage_location" required><br><br>
-
-        <label for="supplier_id">Supplier ID:</label>
-        <input type="number" id="supplier_id" name="supplier_id" required><br><br>
-
-        <input type="submit" value="Update Item">
-    </form>
-</body>
-</html>
-
+{% extends "base.html" %}
+{% block title %}Edit Product{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 style="color: #c02420; font-size: 40pt;"><b>Edit Item</b></h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/edit_product/{{ item.product_code }}" method="POST">
+                    <div class="form-group">
+                        <label for="product_code">Product Code:</label>
+                        <input type="number" id="product_code" name="product_code" value="{{ item.product_code }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="category_id">Category ID:</label>
+                        <input type="number" id="category_id" name="category_id" value="{{ item.category_id }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" value="{{ item.name }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_acquired">Date Acquired:</label>
+                        <input type="date" id="date_acquired" name="date_acquired" value="{{ item.date_acquired }}" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="expiration_date">Expiration Date:</label>
+                        <input type="date" id="expiration_date" name="expiration_date" value="{{ item.expiration_date }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="{{ item.quantity }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">Cost:</label>
+                        <input type="number" id="cost" name="cost" value="{{ item.cost }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="storage_location">Storage Location:</label>
+                        <input type="text" id="storage_location" name="storage_location" value="{{ item.storage_location }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="supplier_id">Supplier ID:</label>
+                        <input type="number" id="supplier_id" name="supplier_id" value="{{ item.supplier_id }}" required>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Update Item">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
