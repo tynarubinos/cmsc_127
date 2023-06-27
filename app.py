@@ -46,18 +46,24 @@ class ProductItem:
         self.storage_location = storage_location
         self.id = id
         
-# Fetch all products from the database
 @app.route("/product")
 def product():
-    cursor.execute("SELECT * FROM product")
+    search_query = request.args.get("search")
+    if search_query:
+        # Perform a search query in the database using the search term
+        cursor.execute("SELECT * FROM product WHERE name LIKE %s OR product_code LIKE %s",
+                       ('%' + search_query + '%', '%' + search_query + '%'))
+    else:
+        # Fetch all products from the database
+        cursor.execute("SELECT * FROM product")
     rows = cursor.fetchall()
 
     # Create Product objects for each row
     product_list = []
     for row in rows:
         item = ProductItem(row[0], row[1], row[2], row[3],
-                       row[4], row[5], row[6], row[7],
-                       row[8])
+                           row[4], row[5], row[6], row[7],
+                           row[8])
         product_list.append(item)
 
     # Render template with inventory data
@@ -126,6 +132,7 @@ def delete_product(product_code):
     return redirect("/product")
 ############ OK
 
+
 ######################
 # Suppliers
 ######################
@@ -140,20 +147,26 @@ class Supplier:
         self.address = address
         self.contact_number = contact_number
         
-# Fetch all suppliers from the database
+# Fetch suppliers from the database based on search query
 @app.route("/supplier")
 def supplier():
-    cursor.execute("SELECT * FROM supplier")
+    search_query = request.args.get("search")
+    if search_query:
+        cursor.execute("SELECT * FROM supplier WHERE name LIKE %s OR address LIKE %s",
+                       ('%' + search_query + '%', '%' + search_query + '%'))
+    else:
+        cursor.execute("SELECT * FROM supplier")
     rows = cursor.fetchall()
 
-    # Create Supplier item for each row
+    # Create Supplier objects for each row
     supplier_list = []
     for row in rows:
         item = Supplier(row[0], row[1], row[2], row[3])
         supplier_list.append(item)
 
-    # Render template with inventory data
+    # Render template with supplier data
     return render_template("supplier.html", supplier=supplier_list)
+
 ########## OK
 
 # Add new suppliers
